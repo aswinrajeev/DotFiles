@@ -1,9 +1,6 @@
 # Configure DOTFILES
 DOTFILESDIR=~/DotFiles
 
-# Homebrew
-export PATH=/opt/homebrew/bin:$PATH
-
 # Configure zap-zsh and install plugins
 source $DOTFILESDIR/zap_rc
 

@@ -1,3 +1,6 @@
+# Homebrew
+export PATH=/opt/homebrew/bin:$PATH
+
 # Java paths
 JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home/"
 
