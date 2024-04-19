@@ -8,3 +8,6 @@ source $DOTFILESDIR/zap_rc
 source $DOTFILESDIR/cli_config
 source $DOTFILESDIR/build_tools
 source $DOTFILESDIR/aliases
+
+# Private configurations
+source .private/private_rc
