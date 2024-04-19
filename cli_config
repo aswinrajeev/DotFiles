@@ -1,0 +1,15 @@
+# Set ls output color coding
+export LSCOLORS=gxfxcxdxbxegedabagacad
+
+# Use fzf for history search
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+function fzf-history() {
+    local selected_command
+    selected_command=$(history -n 1 | fzf +s --tac --prompt="History> ")
+    if [ -n "$selected_command" ]; then
+        BUFFER=$selected_command
+        zle reset-prompt
+    fi
+}
+zle -N fzf-history
+bindkey '^R' fzf-history
