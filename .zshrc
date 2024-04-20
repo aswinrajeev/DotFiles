@@ -1,5 +1,5 @@
 # Configure DOTFILES
-DOTFILESDIR=~/DotFiles
+DOTFILESDIR=$HOME/DotFiles
 
 # Configure zap-zsh and install plugins
 source $DOTFILESDIR/zap_rc
@@ -10,4 +10,5 @@ source $DOTFILESDIR/build_tools
 source $DOTFILESDIR/aliases
 
 # Private configurations
-source .private/private_rc
+PRIVATE_DOTS=$DOTFILESDIR/.private
+source $PRIVATE_DOTS/private_rc
