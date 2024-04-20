@@ -1,0 +1,16 @@
+# Setup repositories
+tap "adoptopenjdk/openjdk"
+tap "homebrew/bundle"
+tap "homebrew/services"
+
+# Brew installs
+brew "python3"
+brew "awscli"
+brew "fzf"
+brew "gh"
+brew "go"
+brew "neofetch"
+brew "neovim"
+brew "nmap"
+brew "openjdk"
+brew "tmux"
