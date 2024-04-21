@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Configure DOTFILES
 DOTFILESDIR=$HOME/DotFiles
 
@@ -6,7 +8,7 @@ source $DOTFILESDIR/zap_rc
 
 # Apply CLI customisations, paths and aliases
 source $DOTFILESDIR/cli_config
-source $DOTFILESDIR/build_tools
+source $DOTFILESDIR/builder_config
 source $DOTFILESDIR/aliases
 
 # Private configurations

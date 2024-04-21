@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Set ls output color coding
 export LSCOLORS=gxfxcxdxbxegedabagacad
 

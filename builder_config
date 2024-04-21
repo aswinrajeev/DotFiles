@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Homebrew
+export PATH=/opt/homebrew/bin:$PATH
+
+# Work rc
+WORK_CONFIGS=$DOTFILESDIR/work
+source $WORK_CONFIGS/work_rc
