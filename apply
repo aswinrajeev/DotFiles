@@ -1,13 +1,15 @@
 #!/bin/sh
 
+DOTFILESDIR=$HOME/.dotfiles
+
 # Backup and restore .zshrc
 mv $HOME/.zshrc $HOME/.zshrc.backup
-ln -s $HOME/DotFiles/.zshrc $HOME/.zshrc
+ln -s $DOTFILESDIR/.zshrc $HOME/.zshrc
 
 # Backup and restore tmux
 mv $HOME/.config/tmux $HOME/.config/tmux.backup
-ln -s $HOME/DotFiles/tmux $HOME/.config/tmux
+ln -s $DOTFILESDIR/tmux $HOME/.config/tmux
 
 # Backup and replace .gitconfig
 mv $HOME/.gitconfig $HOME/.gitconfig.backup
-ln -s $HOME/DotFiles/.private.rc/.gitconfig $HOME/.gitconfig
+ln -s $DOTFILESDIR/.private.rc/.gitconfig $HOME/.gitconfig

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Configure DOTFILES
-DOTFILESDIR=$HOME/DotFiles
+DOTFILESDIR=$HOME/.dotfiles
 
 # Configure zap-zsh and install plugins
 source $DOTFILESDIR/zap_rc
