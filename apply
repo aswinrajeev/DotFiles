@@ -13,3 +13,13 @@ ln -s $DOTFILESDIR/tmux $HOME/.config/tmux
 # Backup and replace .gitconfig
 mv $HOME/.gitconfig $HOME/.gitconfig.backup
 ln -s $DOTFILESDIR/.private.rc/.gitconfig $HOME/.gitconfig
+
+# Install tmux plugin manager if not already done
+TMP_DIR=$DOTFILESDIR/tmux/plugins/tpm
+if [ ! -d "$TMP_DIR" ]; then
+	echo "Cloning TMUX plugin manager..."
+	git clone https://github.com/tmux-plugins/tpm $DOTFILESDIR/tmux/plugins/tpm
+else
+	echo "TMUX plugin manager already installed."
+fi
+
