@@ -4,14 +4,14 @@ export DOTFILESDIR=${PWD}
 
 # Backup and restore .zshrc 
 ZSHRC=$HOME/.zshrc
-if [ ! -d "$ZSHRC" ]; then 
+if [  -e "$ZSHRC" ]; then 
 	mv $HOME/.zshrc $HOME/.zshrc.backup
 fi
 ln -s $DOTFILESDIR/.zshrc $ZSHRC
 
 # Backup and apply .vimrc
 VIMRC=$HOME/.vimrc
-if [ ! -d "$VIMRC" ]; then 
+if [  -e "$VIMRC" ]; then 
 	mv $VIMRC $HOME/.vimrc.backup
 fi
 ln -s $DOTFILESDIR/.vimrc $VIMRC
