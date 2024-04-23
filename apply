@@ -8,7 +8,7 @@ ln -s $DOTFILESDIR/.zshrc $HOME/.zshrc
 
 # Backup and restore tmux
 mv $HOME/.config/tmux $HOME/.config/tmux.backup
-ln -s $DOTFILESDIR/tmux $HOME/.config/tmux
+ln -s $DOTFILESDIR/tmux $HOME/.config/
 
 # Backup and replace .gitconfig
 mv $HOME/.gitconfig $HOME/.gitconfig.backup
@@ -19,6 +19,7 @@ TMP_DIR=$DOTFILESDIR/tmux/plugins/tpm
 if [ ! -d "$TMP_DIR" ]; then
 	echo "Cloning TMUX plugin manager..."
 	git clone https://github.com/tmux-plugins/tpm $DOTFILESDIR/tmux/plugins/tpm
+	echo "\033[0;33mPlease open tmux and press prefix+I to complete installation\033[0m"
 else
 	echo "TMUX plugin manager already installed."
 fi
