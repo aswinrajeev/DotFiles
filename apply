@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILESDIR=$HOME/.dotfiles
+export DOTFILESDIR=${PWD}
 
 # Backup and restore .zshrc 
 ZSHRC=$HOME/.zshrc
