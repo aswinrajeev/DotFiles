@@ -2,9 +2,19 @@
 
 DOTFILESDIR=$HOME/.dotfiles
 
-# Backup and restore .zshrc
-mv $HOME/.zshrc $HOME/.zshrc.backup
-ln -s $DOTFILESDIR/.zshrc $HOME/.zshrc
+# Backup and restore .zshrc 
+ZSHRC=$HOME/.zshrc
+if [ ! -d "$ZSHRC" ]; then 
+	mv $HOME/.zshrc $HOME/.zshrc.backup
+fi
+ln -s $DOTFILESDIR/.zshrc $ZSHRC
+
+# Backup and apply .vimrc
+VIMRC=$HOME/.vimrc
+if [ ! -d "$VIMRC" ]; then 
+	mv $VIMRC $HOME/.vimrc.backup
+fi
+ln -s $DOTFILESDIR/.vimrc $VIMRC
 
 # Backup and restore tmux
 mv $HOME/.config/tmux $HOME/.config/tmux.backup
