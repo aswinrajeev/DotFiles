@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 export DOTFILESDIR=${PWD}
 
@@ -23,6 +23,14 @@ ln -s $DOTFILESDIR/tmux $HOME/.config/
 # Backup and replace .gitconfig
 mv $HOME/.gitconfig $HOME/.gitconfig.backup
 ln -s $DOTFILESDIR/.private.rc/.gitconfig $HOME/.gitconfig
+
+# Check if zap is installed
+if [ ! command -v zap > /dev/null 2>&1 ]; then
+    	echo "Zap is not installed. Installing zap-zsh..."
+	zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
+else
+    	echo "Zap is already installed."
+fi
 
 # Install tmux plugin manager if not already done
 TMP_DIR=$DOTFILESDIR/tmux/plugins/tpm
