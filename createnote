@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+createnote() {
+    local notename="$1"
+    local notedir="$2"
+
+    if [ -z "$notename" ]; then
+        notename=$(date +"%Y%m%d_%H%M%S")
+    fi
+
+    local NOTESDIR=$HOME/Notes
+    if [ -n "$notedir" ]; then
+        notedir=$NOTESDIR/$notedir
+    else
+        notedir=$NOTESDIR/QuickNotes
+    fi
+
+    mkdir -p $notedir
+    
+    local note=$notedir/$notename.md
+
+    echo "Note would be created as $notename in $notedir. Opening..."
+    vi $note
+}

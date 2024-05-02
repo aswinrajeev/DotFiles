@@ -1,1 +1,4 @@
 #!/bin/sh
+
+source $DOTFILESDIR/createnote
+alias note=createnote
