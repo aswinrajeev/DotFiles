@@ -19,6 +19,6 @@ createnote() {
     
     local note=$notedir/$notename.md
 
-    echo "Note would be created as $notename in $notedir. Opening..."
+    echo "Note would be saved in $note. Opening the note..."
     vi $note
 }
