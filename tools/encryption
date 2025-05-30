@@ -1,0 +1,31 @@
+unalias encrypt 2>/dev/null
+unalias decrypt 2>/dev/null
+
+function encrypt {
+    if [ -z "$1" ]; then
+        echo "Usage: encrypt <input_file>"
+        return 1
+    fi
+    if openssl enc -aes-256-cbc -salt -pbkdf2 -in "$1" -out "$1.enc"; then
+        rm "$1"
+        echo "File encrypted and original deleted"
+    else
+        echo "Encryption failed, original file preserved"
+        rm "$1.enc" 2>/dev/null  # Clean up failed encryption file
+    fi
+}
+
+function decrypt {
+    if [ -z "$1" ]; then
+        echo "Usage: decrypt <encrypted_file>"
+        return 1
+    fi
+    output_file="${1%.enc}"
+    if openssl enc -aes-256-cbc -d -pbkdf2 -in "$1" -out "$output_file"; then
+        rm "$1"
+        echo "File decrypted and encrypted file deleted"
+    else
+        echo "Decryption failed, encrypted file preserved"
+        rm "$output_file" 2>/dev/null  # Clean up failed decryption file
+    fi
+}

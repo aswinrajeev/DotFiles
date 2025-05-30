@@ -21,3 +21,7 @@ source $PRIVATE_CONFIGS/private_rc
 # Work configurations
 WORK_CONFIGS=$DOTFILESDIR/work.rc
 source $WORK_CONFIGS/work_rc
+
+# Tools
+TOOLS=$DOTFILESDIR/tools
+source $TOOLS/init 
